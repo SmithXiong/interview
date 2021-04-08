@@ -11,6 +11,8 @@ const getters = {
   currentUser: state => state.user.info,
   addRouters: state => state.permission.addRouters,
   multiTab: state => state.app.multiTab,
+  listPoem: state => state.poem.listData,
+  listDynasty: state => state.dynasty.listData,
 }
 
 export default getters

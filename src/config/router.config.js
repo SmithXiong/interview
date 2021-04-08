@@ -7,86 +7,31 @@ const RouteView = {
 
 export const constantRouterMap = [
   {
-    path: '/user',
-    name: 'user',
-    component: UserLayout,
-    children: [
-      {
-        path: '/user/login',
-        name: 'login',
-        component: () => import('@/views/user/Login'),
-      },
-    ],
-  },
-  {
-    path: '/404',
-    component: () => import(/* webpackChunkName: "fail" */ '@/views/exception/404'),
-  },
-]
-
-export const asyncRouterMap = [
-  {
     path: '/',
     name: 'index',
     component: BasicLayout,
-    meta: { title: 'menu.home' },
-    redirect: '/dashboard/welcome',
+    meta: { title: '文本处理' },
+    redirect: '/list/poem',
     children: [
       // dashboard
       {
-        path: '/dashboard',
-        name: 'dashboard',
-        redirect: '/dashboard/welcome',
+        path: '/list',
+        name: 'list',
+        redirect: '/list/poem',
         component: RouteView,
-        meta: { title: 'menu.dashboard.default', keepAlive: true, icon: 'dashboard', permission: ['dashboard'] },
+        meta: { title: '句子', keepAlive: true, icon: 'dashboard' },
         children: [
           {
-            path: '/dashboard/welcome',
-            name: 'Welcome',
-            component: () => import('@/views/dashboard/Welcome'),
-            meta: { title: 'menu.dashboard.welcome', keepAlive: false, permission: ['dashboard'] },
-          },
-        ],
-      },
-      {
-        path: '/form',
-        name: 'form',
-        meta: {
-          keepAlive: true,
-          title: 'menu.form.default',
-          icon: 'video-camera',
-        },
-        component: RouteView,
-        children: [
-          {
-            path: '/form/basic-form',
-            name: 'basic-form',
-            meta: {
-              keepAlive: true,
-              icon: 'smile',
-              title: 'menu.form.basicform',
-            },
-            component: () => import(/* webpackChunkName: "about" */ '../views/form/basic-form'),
+            path: '/list/poem',
+            name: 'Poem',
+            component: () => import('@/views/poem/poem'),
+            meta: { title: '诗词', keepAlive: false },
           },
           {
-            path: '/form/step-form',
-            name: 'step-form',
-            meta: {
-              keepAlive: true,
-              icon: 'smile',
-              title: 'menu.form.stepform',
-            },
-            component: () => import(/* webpackChunkName: "about" */ '../views/form/step-form'),
-          },
-          {
-            path: '/form/advanced-form',
-            name: 'advanced-form',
-            meta: {
-              keepAlive: true,
-              icon: 'smile',
-              title: 'menu.form.advancedform',
-            },
-            component: () => import(/* webpackChunkName: "about" */ '../views/form/advanced-form'),
+            path: '/list/dynasty',
+            name: 'Dynasty',
+            component: () => import('@/views/dynasty/dynasty'),
+            meta: { title: '朝代', keepAlive: false },
           },
         ],
       },
@@ -95,4 +40,7 @@ export const asyncRouterMap = [
   {
     path: '*', redirect: '/404', hidden: true,
   },
+]
+
+export const asyncRouterMap = [
 ]

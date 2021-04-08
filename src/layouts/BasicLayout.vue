@@ -32,7 +32,7 @@
     <template v-slot:footerRender>
       <global-footer />
     </template>
-    <setting-drawer
+    <!--<setting-drawer
       :settings="{
         layout,
         theme,
@@ -45,7 +45,7 @@
         hideCopyButton: false
       }"
       @change="handleSettingChange"
-    />
+    />-->
     <router-view />
   </pro-layout>
 </template>
@@ -65,6 +65,7 @@ import {
   TOGGLE_MOBILE_TYPE, TOGGLE_NAV_THEME, TOGGLE_WEAK,
 } from '@/store/mutation-types'
 import defaultSettings from '@/config/defaultSettings'
+import { constantRouterMap } from '@/config/router.config'
 
 export default {
   name: 'BasicLayout',
@@ -88,7 +89,7 @@ export default {
   },
   created () {
     // bind router (绑定路由)
-    const routes = this.mainMenu.find(item => item.path === '/')
+    const routes = constantRouterMap.find(item => item.path === '/')
     this.menus = (routes && routes.children) || []
 
     // 处理侧栏收起状态

@@ -16,7 +16,7 @@ export default {
     locale () {
       // sync dom title
       const { title } = this.$route.meta
-      title && (setDocumentTitle(`${i18nRender(title)} - ${domTitle}`))
+      title && (setDocumentTitle(`${title}`))
 
       return this.$i18n.getLocaleMessage(this.$store.getters.lang).antLocale
     },

@@ -25,10 +25,11 @@ module.exports = {
     'no-mixed-operators': 'off',
     // 禁止未使用过的变量 default: ['error', { vars: 'local' }]
     'no-unused-vars': ['off'],
-
+    'prefer-const': ['off'],
     /* vue 项目专用 */
     'vue/require-default-prop': 'warn',
     'vue/singleline-html-element-content-newline': ['off'],
+    'vue/no-unused-components': ['off'],
     'vue/max-attributes-per-line': [
       2,
       {

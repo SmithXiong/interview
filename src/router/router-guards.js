@@ -14,7 +14,7 @@ const defaultRoutePath = '/dashboard'
 
 router.beforeEach((to, from, next) => {
   NProgress.start() // start progress bar
-  const token = ls.get(ACCESS_TOKEN)
+  /* const token = ls.get(ACCESS_TOKEN)
   if (token) {
     if (to.path === loginRoutePath) {
       next({ path: defaultRoutePath })
@@ -62,7 +62,7 @@ router.beforeEach((to, from, next) => {
       next({ path: loginRoutePath, query: { redirect: to.fullPath } })
       NProgress.done() // if current page is login will not trigger afterEach hook, so manually handle it
     }
-  }
+  } */
   next()
 })
 

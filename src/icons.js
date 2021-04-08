@@ -101,3 +101,12 @@ export {
 export {
   default as CheckCircleOutline,
 } from '@ant-design/icons/lib/outline/CheckCircleOutline'
+export {
+  default as InfoOutline,
+} from '@ant-design/icons/lib/outline/InfoOutline'
+export {
+  default as InfoCircleOutline,
+} from '@ant-design/icons/lib/outline/InfoCircleOutline'
+export {
+  default as PlusOutline,
+} from '@ant-design/icons/lib/outline/PlusOutline'
